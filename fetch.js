@@ -1,47 +1,19 @@
-// const { json } = require("stream/consumers");
-
-// fetch('https://api.tarkov.dev/graphql', {
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json',
-//     'Accept': 'application/json',
-//   },
-//   body: JSON.stringify({query: `{
-//     items(name: "m855a1") {
-//         id
-//         name
-//         shortName
-//     }
-// }`})
-// })
-//   .then(r => r.json())
-//   .then(data => console.log('data returned:', data))
+import { graphql } from 'graphql'
 
 
-// const url = 'https://api.tarkov.dev/graphql'
-// fetch(url)
-//   .then((res) => console.log(res))
-//   .then((data) => JSON.stringify(data))
-//   .then((data) => console.dir(data))
-
-fetch('https://api.tarkov.dev/graphql', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json',
-  },
-  body: JSON.stringify({ query: `{
-    __schema {
-      types {
-        name
-        description
-        fields {
-          name
-          description
-        }
-      }
+const query = `
+query {
+  items(where: { category: { name: { eq: "Assault rifle" } } }) {
+    name
+    category {
+      name
     }
-  }`})
-})
-  .then(r => r.json())
-  .then(data => console.log('schema information:', data));
+  }
+}
+`;
+
+graphql(schema, query).then(result => {
+  // 결과 처리
+  const filteredItems = result.data.items.filter(item => item.category.name === "Assault rifle");
+  console.log(filteredItems);
+});

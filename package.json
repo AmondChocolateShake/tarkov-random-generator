@@ -1,0 +1,17 @@
+{
+  "name": "tarkov-random-generator",
+  "version": "1.0.0",
+  "description": "타르코프 랜덤 무기 생성 웹사이트입니다.",
+  "main": "fetch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.4.5",
+    "graphql": "^16.7.1",
+    "typescript": "^5.1.6"
+  }
+}
