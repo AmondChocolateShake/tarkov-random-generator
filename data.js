@@ -22,7 +22,7 @@ const RootQueryType = new GraphQLObjectType({
   },
 });
 
-// 스키마 생성
+// 스키마 생성 (mutation 필드 생략)
 const schema = new GraphQLSchema({
   query: RootQueryType,
 });
