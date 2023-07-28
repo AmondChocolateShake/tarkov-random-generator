@@ -1,6 +1,7 @@
-FROM ubuntu:bionic
+FROM ubuntu 
 
-WORKDIR /app
-# COPY app.jar /app/
+RUN apt-get update 
 
-#CMD ["apt-get","install","openjdk-8-jre"]
+RUN apt-get install -y openjdk-8-jdk maven
+
+RUN echo "jdk 8  install completed"
