@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev":"next",
-    "build":"next build",
-    "start":"next start"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +15,8 @@
     "next": "^13.4.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "isomorphic-unfetch": "^4.0.2"
   }
 }
