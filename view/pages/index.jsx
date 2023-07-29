@@ -1,6 +1,6 @@
-import Link from "next/link";
+import fetch from "isomorphic-unfetch"
 
-const App=()=>{
+const App=({user})=>{
     const username=user&&user.name;
 
     return <div>{username}</div>
