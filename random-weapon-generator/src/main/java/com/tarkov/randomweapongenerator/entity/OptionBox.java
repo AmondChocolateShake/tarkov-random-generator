@@ -1,9 +1,13 @@
 package com.tarkov.randomweapongenerator.entity;
 
 
-
 // 총기 부품 생성 옵션 박스 내 체크 박스 상태 저장 클래스
 public class OptionBox{
+    
+    
+}
+// 총기 부품 생성 옵션 박스 내 체크 박스 상태 저장 클래스
+class Option{
     private boolean operability;
     private boolean noScope;
     private boolean noStock;
@@ -13,7 +17,7 @@ public class OptionBox{
     private boolean noPistolgrip;
     private boolean noBullet;
 
-    protected OptionBox(boolean operability, boolean noScope, boolean noStock, boolean noMagezine, boolean noHandguard, boolean noForegrip, boolean noPistolgrip, boolean noBullet ){
+    protected Option(boolean operability, boolean noScope, boolean noStock, boolean noMagezine, boolean noHandguard, boolean noForegrip, boolean noPistolgrip, boolean noBullet ){
         this.operability=operability;
         this.noScope=noScope;
         this.noStock=noStock;
@@ -24,8 +28,9 @@ public class OptionBox{
         this.noBullet=noBullet;
     }
 
-    protected boolean[] getter(){
+    protected boolean[] getOptionStates(){
         return new boolean[] {operability, noScope, noStock, noMagezine, noHandguard, noForegrip, noPistolgrip, noBullet};
     }
+
 
 }
