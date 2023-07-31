@@ -43,8 +43,8 @@ class Option{
 
 
     // 옵션 값을 id로 취급하여
-    protected void setOptionStateById(){
-
+    protected void setOptionStateById(OptionIds optionId,boolean state){
+        
     }
 
 }
