@@ -1,9 +1,16 @@
 package com.tarkov.randomweapongenerator.entity;
+import java.util.Arrays;
 
+import com.tarkov.randomweapongenerator.entity.OptionIds;
 
 // 총기 부품 생성 옵션 박스 내 체크 박스 상태 저장 클래스
-public class OptionBox{
+public class OptionBox extends Option{
     
+    public OptionBox(){
+        super(true,true,true,true,true,true,true,true);
+        super.setOptionStateById(OptionIds.OPERABILITY, false);
+        System.out.println(Arrays.toString(super.getOptionStates()));
+    }
     
 }
 
@@ -45,6 +52,32 @@ class Option{
     // 옵션 값을 id로 취급하여
     protected void setOptionStateById(OptionIds optionId,boolean state){
         
-    }
 
+        switch(optionId){
+            case OPERABILITY:
+                operability=state;
+                break;
+            case NoSCOPE:
+                noScope=state;
+                break;
+            case NoSTOCK:
+                noStock=state;
+                break;
+            case NoMAGAZINE:
+                noMagazine=state;
+                break;
+            case NoHANDGUARD:
+                noHandguard=state;
+                break;
+            case NoFOREGRIP:
+                noForegrip=state;
+                break;
+            case NoPISTOLGRIP:
+                noPistolgrip=state;
+                break;
+            case NoBULLET:
+                noBullet=state;
+                break;
+        }
+    }
 }
