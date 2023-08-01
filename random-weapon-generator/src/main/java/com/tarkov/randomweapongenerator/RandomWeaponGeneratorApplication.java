@@ -15,7 +15,7 @@ public class RandomWeaponGeneratorApplication {
 		SpringApplication.run(RandomWeaponGeneratorApplication.class, args);
 		System.out.println("hello");
 		FetchAPI api=new FetchAPI();
-		api.SelectDataByWeaponId("asdasd");
+		api.SelectDataByWeaponId("5447a9cd4bdc2dbd208b4567");
 	}
 
 }

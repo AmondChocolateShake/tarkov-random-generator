@@ -19,8 +19,8 @@ public class FetchAPI {
 
 
     public void SelectDataByWeaponId(String id){
-        String query="{\"query\":\"{ items { name }}\"}";
-        System.out.println(GraphQLurl);
+        String query="{\"query\":\"{ item( id :\\\""+id+"\\\"){ name id }}\"}";
+        System.out.println(query);
         String response=webClient.post()
             .uri(GraphQLurl)
             .header(HttpHeaders.CONTENT_TYPE,MediaType.APPLICATION_JSON_VALUE)
