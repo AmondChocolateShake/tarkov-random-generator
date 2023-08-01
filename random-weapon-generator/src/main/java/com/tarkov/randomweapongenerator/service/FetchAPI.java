@@ -23,7 +23,7 @@ public class FetchAPI {
 
 
     public void SelectDataByWeaponId(String id){
-        String query="\"query\" { \"items\"(\"categoryNames\":\"Weapon\"){ \"name\" \"categories\"{\"name\"}}}";
+        String query="{ \"query\": \"{ items(categoryNames: \\\"Weapon\\\"){ name categories{name}}}\" }";
         
         String response=webClient.post()
             .uri(GraphQLurl)
