@@ -14,13 +14,13 @@ import reactor.core.publisher.Mono;
 public class FetchAPI {
 
     @Value("${graphql.endpoint}")
-    private String GraphQLurl="https://api.tarkov.dev/graphql";
+    private String GraphQLurl;
     private WebClient webClient=WebClient.create();
 
 
 
     public void SelectDataByWeaponId(String id){
-        String query="query { items { name }}";
+        String query="{\"query\" :\"{ items { name }}\"}";
         
         String response=webClient.post()
             .uri(GraphQLurl)
