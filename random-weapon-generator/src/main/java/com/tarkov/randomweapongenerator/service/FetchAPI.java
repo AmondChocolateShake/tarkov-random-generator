@@ -14,8 +14,12 @@ import reactor.core.publisher.Mono;
 public class FetchAPI {
 
     private String GraphQLurl="https://api.tarkov.dev/graphql";
+
     private WebClient webClient=WebClient.create();
 
+    public void printSomething(){
+        System.out.println("something");
+    }
 
 
     public void SelectDataByWeaponId(String id){
@@ -29,7 +33,6 @@ public class FetchAPI {
             .bodyToMono(String.class)
             .block();
         
-        System.out.println(response);
     }
 
 }
