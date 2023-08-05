@@ -1,15 +1,30 @@
 package com.tarkov.randomweapongenerator;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.tarkov.randomweapongenerator.service.FetchAPI;
+
 @SpringBootApplication
-public class RandomWeaponGeneratorApplication {
+public class RandomWeaponGeneratorApplication implements CommandLineRunner {
 	
+	private FetchAPI fetchAPI;
+
+	@Autowired
+	public RandomWeaponGeneratorApplication(FetchAPI api){
+		this.fetchAPI=api;
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(RandomWeaponGeneratorApplication.class, args);
 		
 	}
 
+	@Override
+	public void run(String...args){
+		fetchAPI.SelectDataByWeaponId("");
+	}
+	
 }

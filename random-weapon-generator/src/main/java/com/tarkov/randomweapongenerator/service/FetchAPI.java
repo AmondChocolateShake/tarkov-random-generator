@@ -17,11 +17,13 @@ import reactor.core.publisher.Mono;
 @Component
 public class FetchAPI {
 
+
+
     private String GraphQLurl;
     private WebClient webClient;
 
     @Autowired
-    public FetchAPI(@Value("${api.graphql.endpoint}") String GraphQLurl){
+    public FetchAPI(@Value("${graphql.endpoint}") String GraphQLurl){
         this.GraphQLurl=GraphQLurl;
         this.webClient=WebClient.create();
     }
