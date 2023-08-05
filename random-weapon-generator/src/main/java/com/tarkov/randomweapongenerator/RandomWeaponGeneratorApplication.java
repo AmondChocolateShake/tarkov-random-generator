@@ -24,7 +24,7 @@ public class RandomWeaponGeneratorApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String...args){
-		fetchAPI.SelectDataByWeaponId("");
+		System.out.println(fetchAPI.SelectDataByWeaponId(""));
 	}
 	
 }
