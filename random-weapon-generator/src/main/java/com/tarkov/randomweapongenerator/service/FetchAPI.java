@@ -1,5 +1,6 @@
 package com.tarkov.randomweapongenerator.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -16,16 +17,16 @@ import reactor.core.publisher.Mono;
 @Component
 public class FetchAPI {
 
-    private String GraphQLurl="https://api.tarkov.dev/graphql";
+    private String GraphQLurl;
+    private WebClient webClient;
 
-    private WebClient webClient=WebClient.create();
-
-    public void printSomething(){
-        System.out.println("something");
+    @Autowired
+    public FetchAPI(@Value("${api.graphql.endpoint}") String GraphQLurl){
+        this.GraphQLurl=GraphQLurl;
+        this.webClient=WebClient.create();
     }
 
 
-    @RequestMapping(value ="/tarkov", method =RequestMethod.GET )
     public String SelectDataByWeaponId(String id){
         String query="{\"query\":\"{ item( id :\\\""+id+"\\\"){ name id }}\"}";
         System.out.println(query);
