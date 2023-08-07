@@ -25,6 +25,7 @@ class Option{
     private boolean noBullet;
     private boolean random;
 
+
     // 옵션 박스 내 옵션 체크박스 상태 값 저장 생성자
     // 모든 옵션 상태값을 입력 받아야함.
     // boolean 값만 허용
