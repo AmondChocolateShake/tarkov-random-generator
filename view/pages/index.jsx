@@ -1,21 +1,14 @@
-import React,{useState} from "react"
-import Link from "next/link"
+import Link from 'next/link'
 
-const App=()=>{
-    const [username,setUsername]=useState("");
-
-    return(
+const App = () => {
+    return (
         <div>
-            <label>
-                username
-                <input value={username} onChange={(e)=>setUsername(e.target.value)} />
-            </label>
-            <p>{username} 깃허브 검색하기</p>
-            <Link href={`/users/${username}`}>검색하기</Link>
+            <h2>Link to 'tomato; page</h2>
+            <Link href="/tomato" legacyBehavior>
+                <a>Move to '/tomato'</a>
+            </Link>
         </div>
-    )    
-
+    )
 }
-
 
 export default App;
