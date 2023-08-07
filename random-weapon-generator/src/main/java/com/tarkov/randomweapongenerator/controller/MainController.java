@@ -11,12 +11,11 @@ import com.tarkov.randomweapongenerator.entity.OptionBox;
 @RestController
 public class MainController {
 
-    @PostMapping("/generate")
-    public ResponseEntity<String[]> CollectOptions(@RequestBody OptionBox option){
+    // @PostMapping("/generate")
+    // public ResponseEntity<String[]> CollectOptions(@RequestBody OptionBox option){
 
 
 
-        
-    }
+    // }
 
 }

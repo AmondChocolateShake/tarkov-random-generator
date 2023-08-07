@@ -24,7 +24,7 @@ public class RandomWeaponGeneratorApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String...args){
-		System.out.println(fetchAPI.SelectDataByWeaponId(""));
+		System.out.println(fetchAPI.getModListByWeaponId("5447a9cd4bdc2dbd208b4567"));
 	}
 	
 }
