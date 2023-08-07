@@ -9,5 +9,6 @@ public enum OptionIds{
     NoHANDGUARD,
     NoFOREGRIP,
     NoPISTOLGRIP,
-    NoBULLET
+    NoBULLET,
+    RANDOM
 }

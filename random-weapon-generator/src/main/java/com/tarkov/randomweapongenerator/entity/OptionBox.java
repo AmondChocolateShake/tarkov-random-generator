@@ -4,8 +4,8 @@ import com.tarkov.randomweapongenerator.entity.OptionIds;
 // 총기 부품 생성 옵션 박스 내 체크 박스 상태 저장 클래스
 public class OptionBox extends Option{
     
-    public OptionBox(boolean operability,boolean noScope,boolean noStock,boolean noMagazine,boolean noHandguard,boolean noForegrip,boolean noPistolgrip,boolean noBullet){
-        super(operability,noScope,noStock,noMagazine,noHandguard,noForegrip,noPistolgrip,noBullet);
+    public OptionBox(boolean operability,boolean noScope,boolean noStock,boolean noMagazine,boolean noHandguard,boolean noForegrip,boolean noPistolgrip,boolean noBullet, boolean random){
+        super(operability,noScope,noStock,noMagazine,noHandguard,noForegrip,noPistolgrip,noBullet,random);
         
     }
     
@@ -23,12 +23,12 @@ class Option{
     private boolean noForegrip;
     private boolean noPistolgrip;
     private boolean noBullet;
-
+    private boolean random;
 
     // 옵션 박스 내 옵션 체크박스 상태 값 저장 생성자
     // 모든 옵션 상태값을 입력 받아야함.
     // boolean 값만 허용
-    protected Option(boolean operability, boolean noScope, boolean noStock, boolean noMagazine, boolean noHandguard, boolean noForegrip, boolean noPistolgrip, boolean noBullet ){
+    protected Option(boolean operability, boolean noScope, boolean noStock, boolean noMagazine, boolean noHandguard, boolean noForegrip, boolean noPistolgrip, boolean noBullet, boolean random){
         this.operability=operability;
         this.noScope=noScope;
         this.noStock=noStock;
@@ -37,19 +37,18 @@ class Option{
         this.noForegrip=noForegrip;
         this.noPistolgrip=noPistolgrip;
         this.noBullet=noBullet;
-
+        this.random=random;
     }
 
 
     // 모든 옵션 값을 리턴하는 함수
     protected boolean[] getOptionStates(){
-        return new boolean[] {operability, noScope, noStock, noMagazine, noHandguard, noForegrip, noPistolgrip, noBullet};
+        return new boolean[] {operability, noScope, noStock, noMagazine, noHandguard, noForegrip, noPistolgrip, noBullet, random};
     }
 
 
     // 옵션 값을 id로 취급하여
     protected void setOptionStateById(OptionIds optionId,boolean state){
-        
 
         switch(optionId){
             case OPERABILITY:
@@ -76,6 +75,8 @@ class Option{
             case NoBULLET:
                 noBullet=state;
                 break;
+            case RANDOM:
+                random=state;
         }
     }
 }
