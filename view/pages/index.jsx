@@ -1,19 +1,26 @@
-import React,{useState} from "react"
 import Link from "next/link"
+import ModeListBox from "./components/modeListBox";
+import React from "react";
 
-const App=()=>{
-    const [username,setUsername]=useState("");
 
-    return(
-        <div>
-            <label>
-                username
-                <input value={username} onChange={(e)=>setUsername(e.target.value)} />
-            </label>
-            <p>{username} 깃허브 검색하기</p>
-            <Link href={`/users/${username}`}>검색하기</Link>
-        </div>
-    )    
+const App = () => {
+
+    return (
+        <body>
+            <div>
+                <Link href='/' legacyBehavior>
+                    <a><h1>Escape from Tarkov</h1></a>
+                </Link>
+                <ModeListBox />
+            </div>
+            <style sjx>{
+                `body {
+                    background-Color : black;
+                }`
+                }
+            </style>
+        </body>
+    )
 
 }
 
