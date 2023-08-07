@@ -4,9 +4,9 @@ const App = () => {
     return (
         <div>
             <h2>Link to 'tomato; page</h2>
-            <Link href="/tomato" legacyBehavior>
+            <a href="/tomato">
                 <a>Move to '/tomato'</a>
-            </Link>
+            </a>
         </div>
     )
 }
