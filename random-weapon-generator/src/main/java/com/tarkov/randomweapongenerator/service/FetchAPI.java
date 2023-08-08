@@ -36,6 +36,19 @@ public class FetchAPI {
         return response;
     }
 
+    public String getModListByModId(String id){
+        String query="{\"query\":\"{ item(id:\\\""+id+"\\\"){ properties{...on ItemPropertiesWeaponMod{ slots{ nameId filters{ allowedItems{ id }}}}}}}\"}";
+        System.out.println(query);
+        String response=webClient.post()
+            .uri(GraphQLurl)
+            .header(HttpHeaders.CONTENT_TYPE,MediaType.APPLICATION_JSON_VALUE)
+            .body(BodyInserters.fromValue(query))
+            .retrieve()
+            .bodyToMono(String.class)
+            .block();
+        return response;
+    }
+
 
 }
 
