@@ -29,13 +29,18 @@ public class RandomWeapon {
 
     //id 리스트 내 랜덤 id 값을 반환하는 함수
     public String SelectRandomId(String[] ids){
+        
         String id="";
         int RandomNum=random.nextInt(ids.length+1);
         
         //모드가 없는 경우를 생성하여 반환
+        //random 클래스가 id 리스트 개수를 넘어가는 값을 뽑아낸 경우 해당 슬롯은 모드가 없는 것으로 판단
         if(RandomNum==ids.length+1) return "none";
+        //모드 리스트 id중 하나를 반환
         else id=ids[RandomNum];//0 ~ length-1 사이 랜덤값 생성
 
         return id;
+
     }
+
 }
