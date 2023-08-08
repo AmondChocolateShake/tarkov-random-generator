@@ -30,7 +30,11 @@ public class RandomWeapon {
     //id 리스트 내 랜덤 id 값을 반환하는 함수
     public String SelectRandomId(String[] ids){
         String id="";
-        id=ids[random.nextInt(ids.length)];//0 ~ length-1 사이 랜덤값 생성
+        int RandomNum=random.nextInt(ids.length+1);
+        
+        //모드가 없는 경우를 생성하여 반환
+        if(RandomNum==ids.length+1) return "none";
+        else id=ids[RandomNum];//0 ~ length-1 사이 랜덤값 생성
 
         return id;
     }
