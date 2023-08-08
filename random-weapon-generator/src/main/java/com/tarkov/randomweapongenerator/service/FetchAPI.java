@@ -22,6 +22,8 @@ public class FetchAPI {
         this.webClient=WebClient.create();
     }
 
+
+
     // 무기 id 를 이용해 Graphql로 쿼리 전송 후 장착 가능 모드 리스트를 가져옴
     public String getModListByWeaponId(String id){
         String query="{\"query\":\"{ item(id:\\\""+id+"\\\"){ properties{...on ItemPropertiesWeapon{ slots{ nameId filters{ allowedItems{ id }}}}}}}\"}";
