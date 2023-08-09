@@ -20,18 +20,30 @@ public class RandomWeapon {
 
 
     //무기 id 리스트 중에서 랜덤 id 하나를 반환하는 함수
-    private String GenerateRandomWeapon(){
-        int randomNumber=random.nextInt(weaponIds.length);
+    public String GenerateRandomWeapon(){
+        int randomNumber=RandomNumber(weaponIds.length, false);
         String weaponId=weaponIds[randomNumber];
         return weaponId;
     }
 
+    // 0부터 num으로 받은 숫자 미만의 값을 랜덤으로 생성하는 함수
+    // plusOne이 true 인 경우 0부터 num까지의 랜덤 숫자를 반환한다.
+    private int RandomNumber(int num,boolean plusOne){
+        int result=0;
+        if(plusOne){
+            result=random.nextInt(num+1);
+            return result;
+        }else{
+            result=random.nextInt(num);
+            return result;
+        }
+    }
 
     //id 리스트 내 랜덤 id 값을 반환하는 함수
     public String SelectRandomId(String[] ids){
 
         String id="";
-        int RandomNum=random.nextInt(ids.length+1);
+        int RandomNum=RandomNumber(ids.length, true);
         
         //모드가 없는 경우를 생성하여 반환
         //random 클래스가 id 리스트 개수를 넘어가는 값을 뽑아낸 경우 해당 슬롯은 모드가 없는 것으로 판단
