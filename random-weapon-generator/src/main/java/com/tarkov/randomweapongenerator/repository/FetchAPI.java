@@ -1,4 +1,4 @@
-package com.tarkov.randomweapongenerator.service;
+package com.tarkov.randomweapongenerator.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -38,6 +38,8 @@ public class FetchAPI {
         return response;
     }
 
+
+    //모드 id를 통해 모드 추가 모딩 리스트를 조회하는 쿼리 전송
     public String getModListByModId(String id){
         String query="{\"query\":\"{ item(id:\\\""+id+"\\\"){ properties{...on ItemPropertiesWeaponMod{ slots{ nameId filters{ allowedItems{ id }}}}}}}\"}";
         System.out.println(query);
