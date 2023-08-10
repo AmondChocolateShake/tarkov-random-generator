@@ -17,6 +17,7 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "isomorphic-unfetch": "^4.0.2"
+    "isomorphic-unfetch": "^4.0.2",
+    "styled-components": "^6.0.7"
   }
 }
