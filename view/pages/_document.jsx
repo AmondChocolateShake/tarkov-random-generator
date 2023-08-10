@@ -37,7 +37,12 @@ class MyDocument extends Document {
             {`
               body {
                 background-color: black;
-                /* Add more styles here */
+                display : flex;
+                justify-content : center;
+                align-items : center;
+                width : 100vw;
+                height : 100vh;
+                color : white;
               }
             `}
           </style>
