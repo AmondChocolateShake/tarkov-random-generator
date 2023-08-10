@@ -7,14 +7,12 @@ const App = () => {
 
     return (
         // <body className={styles.bodyStyle}>
-            <div>
-                <Link href='/'>
-                    <h1>Escape from Tarkov random weapon generator</h1>
-                </Link>
-                <div>
-                    <h2>modeListBox</h2>
-                </div>
-            </div>
+        <div>
+            <Link href='/'>
+                <h1>Escape from Tarkov random weapon generator</h1>
+            </Link>
+            <ModeListBox />
+        </div>
         // </body>
     )
 
