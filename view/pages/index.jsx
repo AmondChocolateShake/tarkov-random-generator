@@ -1,15 +1,15 @@
 import Link from "next/link"
 import ModeListBox from "../src/components/modeListBox";
 import React from "react";
-import style from '../styles/styles.module.css'
+import styles from '../styles/index.module.css'
 
 const App = () => {
 
     return (
-        <body className={style.body}>
+        <body className={styles.bodyStyle}>
             <div>
-                <Link href='/' legacyBehavior>
-                    <a><h1>Escape from Tarkov random weapon generator</h1></a>
+                <Link href='/'>
+                    <h1>Escape from Tarkov random weapon generator</h1>
                 </Link>
                 <ModeListBox />
             </div>
