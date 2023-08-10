@@ -6,14 +6,12 @@ import styles from '../styles/index.module.css'
 const App = () => {
 
     return (
-        // <body className={styles.bodyStyle}>
-        <div>
-            <Link href='/'>
-                <h1>Escape from Tarkov random weapon generator</h1>
-            </Link>
-            <ModeListBox />
-        </div>
-        // </body>
+            <div>
+                <Link href='/'>
+                    <h1>Escape from Tarkov random weapon generator</h1>
+                </Link>
+                <ModeListBox />
+            </div>
     )
 
 }
