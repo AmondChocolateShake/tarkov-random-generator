@@ -1,20 +1,6 @@
 package com.tarkov.randomweapongenerator.entity;
-import com.tarkov.randomweapongenerator.entity.OptionIds;
 
-// 총기 부품 생성 옵션 박스 내 체크 박스 상태 저장 클래스
-public class OptionBox extends Option{
-    
-    public OptionBox(boolean operability,boolean noScope,boolean noStock,boolean noMagazine,boolean noHandguard,boolean noForegrip,boolean noPistolgrip,boolean noBullet, boolean random){
-        super(operability,noScope,noStock,noMagazine,noHandguard,noForegrip,noPistolgrip,noBullet,random);
-        
-    }
-    
-}
-
-
-
-// 총기 부품 생성 옵션 박스 내 체크 박스 상태 저장 클래스
-class Option{
+public class Options {
     private boolean operability;
     private boolean noScope;
     private boolean noStock;
@@ -29,7 +15,7 @@ class Option{
     // 옵션 박스 내 옵션 체크박스 상태 값 저장 생성자
     // 모든 옵션 상태값을 입력 받아야함.
     // boolean 값만 허용
-    protected Option(boolean operability, boolean noScope, boolean noStock, boolean noMagazine, boolean noHandguard, boolean noForegrip, boolean noPistolgrip, boolean noBullet, boolean random){
+    protected Options(boolean operability, boolean noScope, boolean noStock, boolean noMagazine, boolean noHandguard, boolean noForegrip, boolean noPistolgrip, boolean noBullet, boolean random){
         this.operability=operability;
         this.noScope=noScope;
         this.noStock=noStock;
@@ -41,6 +27,13 @@ class Option{
         this.random=random;
     }
 
+    public boolean isRandom(){
+        if(random){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     // 모든 옵션 값을 리턴하는 함수
     protected boolean[] getOptionStates(){
